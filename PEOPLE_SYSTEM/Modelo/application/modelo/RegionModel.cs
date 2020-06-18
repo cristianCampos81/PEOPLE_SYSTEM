@@ -30,7 +30,10 @@ namespace Modelo.application.modelo
 
         public override string ToString()
         {
-            return id + " - " + nombre;
+            return "\n\t\t\tREGION: \n" +
+                   "\nID: " + id +
+                   "\nNOMBRE: " + nombre +
+                   "\nNOMBRE: " + descripcion;
         }
     }
 }
