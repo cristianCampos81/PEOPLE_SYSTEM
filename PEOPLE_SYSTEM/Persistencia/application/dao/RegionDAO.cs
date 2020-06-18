@@ -67,5 +67,58 @@ namespace Persistencia.application.dao
 
             return regiones;
         }
+
+        public bool ActualizarPorId(RegionModel region)
+        {
+            REGIONTableAdapter adapter = new REGIONTableAdapter();
+
+            try
+            {
+                int resultado = adapter.ActualizarPorId(region.Nombre,
+                    region.Descripcion,
+                    region.Id);
+
+                if (resultado == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public bool BorrarPorId(int id)
+        {
+            REGIONTableAdapter adapter = new REGIONTableAdapter();
+
+            try
+            {
+                int resultado = adapter.BorrarPorId(id);
+
+                if (resultado == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
+
 }

@@ -29,6 +29,31 @@ namespace Testing.application.persistencia
 
             Assert.IsTrue(regiones.Count > 0);
         }
+
+        [TestMethod]
+        public void TestActualizarPorID()
+        {
+            RegionModel region = new RegionModel();
+            region.Nombre = "ANTOFAGASTA";
+            region.Descripcion = "ZONA NORTE";
+            region.Id = 3;
+
+            RegionDAO regionDAO = new RegionDAO();
+            bool resultado = regionDAO.ActualizarPorId(region);
+
+            Assert.IsTrue(resultado);
+        }
+
+        [TestMethod]
+        public void TestBorrarPorID()
+        {
+            
+            RegionDAO regionDAO = new RegionDAO();
+            bool resultado = regionDAO.BorrarPorId(1);
+
+            Assert.IsTrue(resultado);
+        }
+
     }
 
 }
