@@ -12,7 +12,7 @@ namespace Persistencia.application.dao
 {
     public class RegionDAO
     {
-        public bool Insert(RegionModel region)
+        public bool Insertar(RegionModel region)
         {
             REGIONTableAdapter adapter =
                 new REGIONTableAdapter();
